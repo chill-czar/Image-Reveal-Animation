@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
+  
+
   gsap.ticker.lagSmoothing(0);
 
   document.querySelectorAll(".img:not([data-origin])").forEach((img, index) => {
@@ -30,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         end: "bottom bottom-=10%",
         scrub: 1,
         invalidateOnRefresh: true,
+        // markers: true,
         onUpdate: function (self) {
           if (self.isActive) {
             const progress = self.progress;
